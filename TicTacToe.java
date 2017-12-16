@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class TicTacToe extends JFrame implements ActionListener{
-		private JButton casa[] = new JButton[9];
+		private JButton casas[] = new JButton[9];
 		private JButton btnRecomecar = new JButton();
 		private JTextField txtJogadorX = new JTextField(2);
 		private JTextField txtJogadorO = new JTextField(2);
@@ -39,11 +39,11 @@ public class TicTacToe extends JFrame implements ActionListener{
 			pnlMenu.add(btnRecomecar);
 
 			for (int i =0; i <9; i++){
-				casa[i] = new JButton();
-				casa[i].setFont(new Font("Arial", Font.PLAIN, 40));
-				pnlForm.add(casa[i]);
-	            casa[i].setText("");
-	            casa[i].addActionListener(new clicarBotao());
+				casas[i] = new JButton();
+				casas[i].setFont(new Font("Arial", Font.PLAIN, 40));
+				pnlForm.add(casas[i]);
+	            casas[i].setText("");
+	            casas[i].addActionListener(new clicarBotao());
 			}
 
 			pnlPrincipal.add(pnlMenu, BorderLayout.NORTH);
@@ -58,8 +58,8 @@ public class TicTacToe extends JFrame implements ActionListener{
 
 		public void zerarValores(){
 	        for(int i = 0; i < 9; i++){
-	            casa[i].setText("");
-	            casa[i].setEnabled(true);
+	            casas[i].setText("");
+	            casas[i].setEnabled(true);
 	            count = 0;
 	        }
 	    }
@@ -111,34 +111,34 @@ public class TicTacToe extends JFrame implements ActionListener{
 	        
 	        public String ChecarVencedor(){
 	            //horizontal
-	            if(casa[0].getText().equals(casa[1].getText())
-	            		&& casa[1].getText().equals(casa[2].getText()))
-	                return casa[0].getText();
-	            else if(casa[3].getText().equals(casa[4].getText()) 
-	            		&& casa[4].getText().equals(casa[5].getText()))
-	                return casa[3].getText();
-	            else if(casa[6].getText().equals(casa[7].getText()) 
-	            		&& casa[7].getText().equals(casa[8].getText()))
-	                return casa[6].getText();
+	            if(casas[0].getText().equals(casas[1].getText())
+	            		&& casas[1].getText().equals(casas[2].getText()))
+	                return casas[0].getText();
+	            else if(casas[3].getText().equals(casas[4].getText()) 
+	            		&& casas[4].getText().equals(casas[5].getText()))
+	                return casas[3].getText();
+	            else if(casas[6].getText().equals(casas[7].getText()) 
+	            		&& casas[7].getText().equals(casas[8].getText()))
+	                return casas[6].getText();
 	            
 	            //vertical
-	            else if(casa[0].getText().equals(casa[3].getText()) 
-	            		&& casa[3].getText().equals(casa[6].getText()))
-	                return casa[0].getText();
-	            else if(casa[1].getText().equals(casa[4].getText()) 
-	            		&& casa[4].getText().equals(casa[7].getText()))
-	                return casa[1].getText();
-	            else if(casa[2].getText().equals(casa[5].getText()) 
-	            		&& casa[5].getText().equals(casa[8].getText()))
-	                return casa[2].getText();
+	            else if(casas[0].getText().equals(casas[3].getText()) 
+	            		&& casas[3].getText().equals(casas[6].getText()))
+	                return casas[0].getText();
+	            else if(casas[1].getText().equals(casas[4].getText()) 
+	            		&& casas[4].getText().equals(casas[7].getText()))
+	                return casas[1].getText();
+	            else if(casas[2].getText().equals(casas[5].getText()) 
+	            		&& casas[5].getText().equals(casas[8].getText()))
+	                return casas[2].getText();
 	            
 	            //diagonal
-	            else if(casa[0].getText().equals(casa[4].getText()) 
-	            		&& casa[4].getText().equals(casa[8].getText()))
-	                return casa[0].getText();
-	            else if(casa[2].getText().equals(casa[4].getText()) 
-	            		&& casa[4].getText().equals(casa[6].getText()))
-	                return casa[2].getText();
+	            else if(casas[0].getText().equals(casas[4].getText()) 
+	            		&& casas[4].getText().equals(casas[8].getText()))
+	                return casas[0].getText();
+	            else if(casas[2].getText().equals(casas[4].getText()) 
+	            		&& casas[4].getText().equals(casas[6].getText()))
+	                return casas[2].getText();
 	            else
 	            	return null;
 	        }
