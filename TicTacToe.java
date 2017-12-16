@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class TicTacToe extends JFrame implements ActionListener{
-		private JButton buttons[] = new JButton[9];
+		private JButton casa[] = new JButton[9];
 		private JButton btnRecomecar = new JButton();
 		private JTextField txtJogadorX = new JTextField(2);
 		private JTextField txtJogadorO = new JTextField(2);
@@ -39,11 +39,11 @@ public class TicTacToe extends JFrame implements ActionListener{
 			pnlMenu.add(btnRecomecar);
 
 			for (int i =0; i <9; i++){
-				buttons[i] = new JButton();
-				buttons[i].setFont(new Font("Arial", Font.PLAIN, 40));
-				pnlForm.add(buttons[i]);
-	            buttons[i].setText("");
-	            buttons[i].addActionListener(new clicarBotao());
+				casa[i] = new JButton();
+				casa[i].setFont(new Font("Arial", Font.PLAIN, 40));
+				pnlForm.add(casa[i]);
+	            casa[i].setText("");
+	            casa[i].addActionListener(new clicarBotao());
 			}
 
 			pnlPrincipal.add(pnlMenu, BorderLayout.NORTH);
@@ -58,8 +58,8 @@ public class TicTacToe extends JFrame implements ActionListener{
 
 		public void zerarValores(){
 	        for(int i = 0; i < 9; i++){
-	            buttons[i].setText("");
-	            buttons[i].setEnabled(true);
+	            casa[i].setText("");
+	            casa[i].setEnabled(true);
 	            count = 0;
 	        }
 	    }
@@ -111,34 +111,34 @@ public class TicTacToe extends JFrame implements ActionListener{
 	        
 	        public String ChecarVencedor(){
 	            //horizontal
-	            if(buttons[0].getText().equals(buttons[1].getText())
-	            		&& buttons[1].getText().equals(buttons[2].getText()))
-	                return buttons[0].getText();
-	            else if(buttons[3].getText().equals(buttons[4].getText()) 
-	            		&& buttons[4].getText().equals(buttons[5].getText()))
-	                return buttons[3].getText();
-	            else if(buttons[6].getText().equals(buttons[7].getText()) 
-	            		&& buttons[7].getText().equals(buttons[8].getText()))
-	                return buttons[6].getText();
+	            if(casa[0].getText().equals(casa[1].getText())
+	            		&& casa[1].getText().equals(casa[2].getText()))
+	                return casa[0].getText();
+	            else if(casa[3].getText().equals(casa[4].getText()) 
+	            		&& casa[4].getText().equals(casa[5].getText()))
+	                return casa[3].getText();
+	            else if(casa[6].getText().equals(casa[7].getText()) 
+	            		&& casa[7].getText().equals(casa[8].getText()))
+	                return casa[6].getText();
 	            
 	            //vertical
-	            else if(buttons[0].getText().equals(buttons[3].getText()) 
-	            		&& buttons[3].getText().equals(buttons[6].getText()))
-	                return buttons[0].getText();
-	            else if(buttons[1].getText().equals(buttons[4].getText()) 
-	            		&& buttons[4].getText().equals(buttons[7].getText()))
-	                return buttons[1].getText();
-	            else if(buttons[2].getText().equals(buttons[5].getText()) 
-	            		&& buttons[5].getText().equals(buttons[8].getText()))
-	                return buttons[2].getText();
+	            else if(casa[0].getText().equals(casa[3].getText()) 
+	            		&& casa[3].getText().equals(casa[6].getText()))
+	                return casa[0].getText();
+	            else if(casa[1].getText().equals(casa[4].getText()) 
+	            		&& casa[4].getText().equals(casa[7].getText()))
+	                return casa[1].getText();
+	            else if(casa[2].getText().equals(casa[5].getText()) 
+	            		&& casa[5].getText().equals(casa[8].getText()))
+	                return casa[2].getText();
 	            
 	            //diagonal
-	            else if(buttons[0].getText().equals(buttons[4].getText()) 
-	            		&& buttons[4].getText().equals(buttons[8].getText()))
-	                return buttons[0].getText();
-	            else if(buttons[2].getText().equals(buttons[4].getText()) 
-	            		&& buttons[4].getText().equals(buttons[6].getText()))
-	                return buttons[2].getText();
+	            else if(casa[0].getText().equals(casa[4].getText()) 
+	            		&& casa[4].getText().equals(casa[8].getText()))
+	                return casa[0].getText();
+	            else if(casa[2].getText().equals(casa[4].getText()) 
+	            		&& casa[4].getText().equals(casa[6].getText()))
+	                return casa[2].getText();
 	            else
 	            	return null;
 	        }
